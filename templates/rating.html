@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+    <head>
+        <html lang="en" dir="ltr">
+        <meta charset="utf-8">
+        <title>Rating</title>
+
+        <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+        <style type="text/css">    
+          body
+          {
+            border: 2px solid black;
+            padding: 25px;
+            background: url("http://www.baltana.com/files/wallpapers-5/Light-Background-Wallpaper-16379.jpeg");
+            background-repeat: repeat;
+            background-size: 2000px 2000px;   background-size: cover;    }
+
+
+
+
+            /*--------------------------------------------------------------
+            # Header
+            --------------------------------------------------------------*/
+            #header {
+              top: 50px;
+              height: 70px;
+              z-index: 997;
+              transition: all 0.5s;
+              padding: 10px 0;
+            }
+
+            #header.header-scrolled {
+              top: 0;
+              background: rgba(26, 24, 22, 0.85);
+            }
+
+            @media (max-width: 992px) {
+              #header {
+                top: 0;
+                background: rgba(26, 24, 22, 0.85);
+              }
+            }
+            /*--------------------------------------------------------------
+            # Navigation Menu
+            --------------------------------------------------------------*/
+            /* Desktop Navigation */
+            .nav-menu, .nav-menu * {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+            }
+
+            .nav-menu > ul > li {
+              position: relative;
+              white-space: nowrap;
+              float: left;
+            }
+
+            .nav-menu a {
+              display: block;
+              position: relative;
+              color: white;
+              padding: 9px 14px;
+              transition: 0.3s;
+              font-size: 15px;
+              font-weight: 500;
+              font-family: "Poppins", sans-serif;
+            }
+
+            .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+              color: #ffb03b;
+              text-decoration: none;
+            }
+
+            .nav-menu .book-a-table a {
+              background: #ffb03b;
+              color: #fff;
+              border-radius: 50px;
+              margin: 0 0 0 20px;
+              padding: 10px 25px;
+              text-transform: uppercase;
+              font-size: 13px;
+              font-weight: 500;
+              letter-spacing: 1px;
+              transition: 0.3s;
+            }
+
+            .nav-menu .book-a-table a:hover {
+              background: #ffa012;
+              color: #fff;
+            }
+
+            .nav-menu .drop-down ul {
+              display: block;
+              position: absolute;
+              left: 0;
+              top: calc(100% + 30px);
+              z-index: 99;
+              opacity: 0;
+              visibility: hidden;
+              padding: 10px 0;
+              background: #fff;
+              box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+              transition: ease all 0.3s;
+            }
+
+            .nav-menu .drop-down:hover > ul {
+              opacity: 1;
+              top: 100%;
+              visibility: visible;
+            }
+
+            .nav-menu .drop-down li {
+              min-width: 180px;
+              position: relative;
+            }
+
+            .nav-menu .drop-down ul a {
+              padding: 10px 20px;
+              font-size: 14px;
+              font-weight: 500;
+              text-transform: none;
+              color: #433f39;
+            }
+
+            .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+              color: #ffb03b;
+            }
+
+            .nav-menu .drop-down > a:after {
+              content: "\ea99";
+              font-family: IcoFont;
+              padding-left: 5px;
+            }
+
+            .nav-menu .drop-down .drop-down ul {
+              top: 0;
+              left: calc(100% - 30px);
+            }
+
+            .nav-menu .drop-down .drop-down:hover > ul {
+              opacity: 1;
+              top: 0;
+              left: 100%;
+            }
+
+            .nav-menu .drop-down .drop-down > a {
+              padding-right: 35px;
+            }
+
+            .nav-menu .drop-down .drop-down > a:after {
+              content: "\eaa0";
+              font-family: IcoFont;
+              position: absolute;
+              right: 15px;
+            }
+
+            @media (max-width: 1366px) {
+              .nav-menu .drop-down .drop-down ul {
+                left: -90%;
+              }
+              .nav-menu .drop-down .drop-down:hover > ul {
+                left: -100%;
+              }
+              .nav-menu .drop-down .drop-down > a:after {
+                content: "\ea9d";
+              }
+            }
+
+
+
+
+        </style>
+    </head>
+
+    <body>
+        {% extends "template.html" %}
+        {% block content %}
+
+        <header id="header" class="fixed-top d-flex align-items-center header-scrolled">
+            <div class="container d-flex align-items-center">
+              <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                  <li class="active"><a href="/gohome">Home</a></li>
+
+                  <li><a href="/" style="text-decoration: none;">signout</a></li>
+                  <li><a href="/predictinfo" style="text-decoration: none; position: relative; left: 550%;">Enter your Rating</a></li>
+
+                </ul>
+              </nav><!-- .nav-menu -->
+
+            </div>
+        </header><!-- End Header -->
+
+        <div class="container">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+        <h1 style="text-align:center;">Please rate based on your preference </h1>
+            &nbsp;
+        <form action="{{ url_for('recommendation') }}" method="POST">
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Beach </font>Place?</strong><br/>Example: Malpe Beach</p>
+
+                <input type="radio" name="Action" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Action" value="1" > 1<br>
+                <input type="radio" name="Action" value="2"> 2<br>
+                <input type="radio" name="Action" value="3"> 3<br>
+                <input type="radio" name="Action" value="4"> 4<br>
+                <input type="radio" name="Action" value="5"> 5
+            </div>
+
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Trekking  </font>Place?</strong><br/>Example: Dandeli </p>
+
+                <input type="radio" name="Adventure" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Adventure" value="1" > 1<br>
+                <input type="radio" name="Adventure" value="2"> 2<br>
+                <input type="radio" name="Adventure" value="3"> 3<br>
+                <input type="radio" name="Adventure" value="4"> 4<br>
+                <input type="radio" name="Adventure" value="5"> 5
+            </div>
+
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Romantic </font>Place?</strong><br/>Example: TajMahal </p>
+
+                <input type="radio" name="Animation" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Animation" value="1" > 1<br>
+                <input type="radio" name="Animation" value="2"> 2<br>
+                <input type="radio" name="Animation" value="3"> 3<br>
+                <input type="radio" name="Animation" value="4"> 4<br>
+                <input type="radio" name="Animation" value="5"> 5
+            </div>
+            
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Family</font>Places?</strong><br/>Example:  Wonderla </p>
+
+                <input type="radio" name="Children" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Children" value="1" > 1<br>
+                <input type="radio" name="Children" value="2"> 2<br>
+                <input type="radio" name="Children" value="3"> 3<br>
+                <input type="radio" name="Children" value="4"> 4<br>
+                <input type="radio" name="Children" value="5"> 5
+            </div>
+
+            <div>
+             <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Religious </font>Places?</strong><br/>Example: Kudroli </p>
+
+                <input type="radio" name="Comedy" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Comedy" value="1" > 1<br>
+                <input type="radio" name="Comedy" value="2"> 2<br>
+                <input type="radio" name="Comedy" value="3"> 3<br>
+                <input type="radio" name="Comedy" value="4"> 4<br>
+                <input type="radio" name="Comedy" value="5"> 5
+            </div>
+
+
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Solo Travel </font>Place?</strong><br/>Example: Ladak </p>
+
+                <input type="radio" name="Crime" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Crime" value="1" > 1<br>
+                <input type="radio" name="Crime" value="2"> 2<br>
+                <input type="radio" name="Crime" value="3"> 3<br>
+                <input type="radio" name="Crime" value="4"> 4<br>
+                <input type="radio" name="Crime" value="5"> 5
+            </div>
+
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Hill Station </font>Place?</strong><br/>Example: Ooty </p>
+
+                <input type="radio" name="Documentary" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Documentary" value="1" > 1<br>
+                <input type="radio" name="Documentary" value="2"> 2<br>
+                <input type="radio" name="Documentary" value="3"> 3<br>
+                <input type="radio" name="Documentary" value="4"> 4<br>
+                <input type="radio" name="Documentary" value="5"> 5
+            </div>
+
+            <div>
+            <p> <strong><font size="4" color="black">What is your rating to <font color="Maroon">Falls </font>Place?</strong><br/>Example: Jog Falls </p>
+
+                <input type="radio" name="Drama" value="0" checked>I hate this genre!<br>
+                <input type="radio" name="Drama" value="1" > 1<br>
+                <input type="radio" name="Drama" value="2"> 2<br>
+                <input type="radio" name="Drama" value="3"> 3<br>
+                <input type="radio" name="Drama" value="4"> 4<br>
+                <input type="radio" name="Drama" value="5"> 5
+            </div>
+            <div>&nbsp;</div>
+            <div class="container" style="text-align:center">
+            <h3><font color="midnightblue">If you're sure about these ratings, go ahead and click this button!</h3>
+                <div>&nbsp;</div>
+
+            <button type="submit" class="btn btn-lg btn-primary"><strong>Get Recommendations!</strong></button>
+<!--            <a href="/predictinfo">Enter your Rating</a>-->
+            </div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+        </form>
+            </div>
+		
+        {% endblock %}
+		
+    </body>
+</html>

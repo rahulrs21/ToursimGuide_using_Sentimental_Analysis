@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!--  AJAX Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=840&q=80");
+            padding: 25px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        th{
+            color: #000;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: center;
+          padding: 8px;
+
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <section> <!--style="background-image: url(https://images.unsplash.com/photo-1541436293327-8f104af135eb?ixlib=rb-1.2.1&w=1000&q=80); background-image: cover" -->
+        <a href="{{place_name}}"><button class="btn btn-lg btn-outline-warning"><i class="fas fa-backward"></i> Back</button></a>
+
+        <center>
+    <h1 style="color:#fff; font-family: Times New Roman, Times, serif;">Reviews of {{place_name}}</h1><br>
+    <div class="container" style="padding: 5px; background-color: #ff6666; color: #fff;">
+
+
+        <div class="table-responsive">
+            <h3>{{print_answer}}</h3>
+<!--            <h2>{{invalid_place}}</h2>-->
+        </div>
+
+
+    </div>
+
+            <div>&nbsp;</div>
+
+<!--            <table>-->
+<!--              <tr>-->
+<!--                <th>Review Rate</th>-->
+<!--                <th>Comments</th>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <td>Alfreds Futterkiste</td>-->
+<!--                <td>Maria Anderswedfgfdsasdfg asfgfhgfdsasd fgfggfdsfg efgfhggfdsfg wefgddsdfg sdfgddsfg esfg</td>-->
+<!--              </tr>-->
+
+<!--            </table>-->
+
+    </center>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+    </section>
+</body>
+</html>
+
